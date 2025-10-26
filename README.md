@@ -4,14 +4,14 @@ This repository contains the experiments and results of a project focused on pre
 
 
 
-## Aim of the Project
+## 🎯 Aim of the Project
 
 The objective of this project is to **predict DNase I hypersensitivity signal enrichment** — an indicator of chromatin accessibility — using **neural networks trained on genomic DNA sequences**.  
 By learning sequence-specific regulatory patterns, these models can identify **open chromatin regions** and **active promoter sites**, providing a computational alternative to costly wet-lab assays.
 
 
 
-## Methods
+## 📘 Methods
 
 ### Data
 - **Genome:** Human GRCh38 / hg38  
@@ -47,26 +47,26 @@ By learning sequence-specific regulatory patterns, these models can identify **o
    - Hyperparameters tuned: kernel size, filter count, stride, hidden units  
 
 
-## Results Summary
+## 📊 Results Summary
 
 | Model | Key Hyperparameters | Test MSE |
 |:------|:--------------------|:--------:|
 | **Baseline (Random Forest)** | Random params | 0.066 |
 | **FCNN (1 Hidden Layer)** | lr = 2e-4, hidden = 2000, wd = 1e-5 | 0.066 |
 | **FCNN (2 Hidden Layers)** | lr = 2e-4, hidden = 2000, wd = 1e-5 | 0.076 |
-| **CNN (Optimized)** | conv_out = 10, kernel = 40, hidden = 1000, lr = 2e-4, wd = 1e-5 | **0.047** |
+| **CNN (Optimized)** :trophy: | conv_out = 10, kernel = 40, hidden = 1000, lr = 2e-4, wd = 1e-5 | **0.047** |
 
-### Promoter vs Non-Promoter Predictions
+### Promoter vs Non-Promoter Predictions using CNN
 | Region Type | Mean Signal Enrichment (± SEM) |
 |:-------------|:-------------------------------:|
 | Promoter | **1.130 ± 0.001** |
 | Non-Promoter | **0.476 ± 0.03** |
 
-CNN accurately predicts higher chromatin accessibility in promoter regions, aligning with biological expectations.
+➡️ CNN accurately predicts higher chromatin accessibility in promoter regions, aligning with biological expectations.
 
 
 
-## Key Insights
+## 🚀 Key Insights
 - Even **simple architectures** capture sequence-level determinants of chromatin accessibility.  
 - **CNN outperformed FCNN**, achieving the best MSE (0.047).  
 - Careful **hyperparameter tuning** (learning rate, filter size) was critical.  
@@ -75,7 +75,7 @@ CNN accurately predicts higher chromatin accessibility in promoter regions, alig
 
 
 
-## Future Work
+## 🔜 Future Work
 - Extend training to additional chromosomes and cell lines.  
 - Explore **deeper and multi-layer CNNs** for motif detection.  
 - Implement **automated hyperparameter optimization** (Bayesian / Optuna).  
